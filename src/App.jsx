@@ -7,11 +7,11 @@ function App() {
   //const [count, setCount] = useState(0)
 
   return (
-    <>
-    <h1 className="text-3xl font-bold underline">
-      Salut, Monde
-    </h1>
-    </>
+    <div className="container bg-[#fecaca]">
+      <h1 className="text-3xl font-bold underline">
+        Hello, this is a test
+      </h1>
+    </div>
   )
 }
 
