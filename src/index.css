@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+  background: url('assets/pexels-nati-16776937.jpg');
+  background-size: cover;
+}
