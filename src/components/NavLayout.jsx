@@ -6,9 +6,9 @@ import {
 export default function NavLayout(){
 
   return (
-    <div className="h-full ">
-      <div className="h-16 w-full bg-black/50 mt-16 flex text-4xl text-white items-center">
-        <nav className="w-full">
+    <div className=" h-screen min-h-[400px] w-screen min-w-[700px] flex flex-col">
+      <div className="h-1/6 min-h-24 w-full min-w[700px] flex text-4xl text-white items-center">
+        <nav className=" w-full bg-black/50">
           <ul className="flex w-full items-center justify-center text-2xl  ">
             <li className="mx-10">
               <NavLink to="/">Home</NavLink>
@@ -22,9 +22,7 @@ export default function NavLayout(){
           </ul>
         </nav>
       </div>
-      <div className="h-full">
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
     
   )

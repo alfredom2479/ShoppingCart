@@ -5,4 +5,7 @@
 body{
   background: url('assets/pexels-nati-16776937.jpg');
   background-size: cover;
+  background-position: center;
+  height: max(100vh,400px);
+  width: max(100vw,700px);
 }

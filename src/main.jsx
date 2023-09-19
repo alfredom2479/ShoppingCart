@@ -7,6 +7,7 @@ import {
 
 
 import Home from "./pages/Home.jsx"
+import Catalog from './pages/Catalog.jsx';
 import NavLayout from './components/NavLayout.jsx';
 //import App from './App.jsx'
 /*import {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: "shop",
-        element: <h1>are u into me</h1>
+        element: <Catalog/>
       },
       {
         path: "cart",
