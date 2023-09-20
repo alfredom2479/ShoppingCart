@@ -9,13 +9,11 @@ import {
 import Home from "./pages/Home.jsx"
 import Catalog from './pages/Catalog.jsx';
 import NavLayout from './components/NavLayout.jsx';
-//import App from './App.jsx'
-/*import {
-  createBrowserRouter,
-  RouterProvider
-} from "react-router-dom";*/
 
-import './index.css'
+import {loader as catalogLoader} from "./pages/Catalog.jsx";
+
+import "./index.css";
+
 
 const router = createBrowserRouter([
   {
@@ -28,7 +26,8 @@ const router = createBrowserRouter([
       },
       {
         path: "shop",
-        element: <Catalog/>
+        element: <Catalog/>,
+        loader: catalogLoader
       },
       {
         path: "cart",
