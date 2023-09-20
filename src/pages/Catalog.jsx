@@ -7,10 +7,11 @@ export async function loader(){
   return storeItems;
 }
 
+
+
 export default function Catalog(){
 
   const storeItems = useLoaderData();
-  console.log(storeItems);
   return(
     <div className="bg-white/30 h-5/6 w-4/5 mt-6 self-center flex flex-wrap justify-center overflow-y-scroll">
       {storeItems.map((item)=> <ItemCard key={item.id} itemProps={item}/>)}

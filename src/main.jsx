@@ -10,7 +10,11 @@ import Home from "./pages/Home.jsx"
 import Catalog from './pages/Catalog.jsx';
 import NavLayout from './components/NavLayout.jsx';
 
-import {loader as catalogLoader} from "./pages/Catalog.jsx";
+import {
+  loader as catalogLoader,
+} from "./pages/Catalog.jsx";
+
+import {action as addItemAction} from "./components/ItemCard.jsx"
 
 import "./index.css";
 
@@ -19,6 +23,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <NavLayout/>,
+    action: addItemAction,
     children:[
       {
         index:true,
@@ -27,7 +32,7 @@ const router = createBrowserRouter([
       {
         path: "shop",
         element: <Catalog/>,
-        loader: catalogLoader
+        loader: catalogLoader,
       },
       {
         path: "cart",
