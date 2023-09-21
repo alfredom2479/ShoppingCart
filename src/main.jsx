@@ -17,6 +17,7 @@ import {
 import {action as addItemAction} from "./components/ItemCard.jsx"
 
 import "./index.css";
+import CartPage from './pages/CartPage.jsx';
 
 
 const router = createBrowserRouter([
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "cart",
-        element: <h1>cause im into u</h1>
+        element: <CartPage/>
       }
 
     ]
