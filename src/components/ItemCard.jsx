@@ -2,16 +2,43 @@ import PropTypes from "prop-types";
 import {Form, redirect} from "react-router-dom";
 
 export async function action({request}){
-  let formData = await request.formData();
-  console.log(formData.has("numOfItems"));
-  console.log(formData.get(""))
-  console.log(request.url);
+
+  let currCart = JSON.parse(localStorage.getItem("mycart"));
+  console.log(currCart);
+
+  const formData = await request.formData();
+  let numOfItems = Number(formData.get("numOfItems")) || 0;
+  const itemId = formData.get("itemid") || undefined;
+
+  if(typeof numOfItems != "number"){
+    numOfItems=0;
+  }
+
+  if(currCart && itemId){
+      let currAmount = (Number(currCart[itemId]));
+      if( typeof currAmount != "number") currAmount = 0;
+
+      currCart[itemId] = (currAmount+numOfItems) || numOfItems;
+  }
+  else if(itemId){
+    currCart = {};
+    currCart[itemId] = numOfItems;
+  }
+
+  console.log(currCart);
+  localStorage.setItem("mycart",JSON.stringify(currCart));
+  
+  //formData.get("not real field") returns null
+  //localStorage.getItem("misnalgas") returns null
+  //console.log(localStorage.getItem("misnalgas"));
+  //console.log(request.url);
   return redirect("/shop");
+  //return null;
 }
 
 export default function ItemCard({itemProps}){
 
-  console.log(itemProps.title);
+  //console.log(itemProps.title);
   return (
     <div className="bg-black/80 h-80 w-64 m-6 flex justify-center items-center flex-col rounded-lg">
       <div className=" bg-white h-48 w-full flex justify-center ">

@@ -3,7 +3,7 @@
 export default function Home(){
 
   return (
-     <div className=" bg-white/90  h-5/6  flex items-center justify-center white">
+     <div className=" h-5/6  flex items-center justify-center white">
 
         <div className="w-96 h-52 bg-black/40 text-white flex items-center justify-center text-5xl flex-col font-black rounded-lg">
           Fake Store

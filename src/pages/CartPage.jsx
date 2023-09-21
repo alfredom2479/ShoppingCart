@@ -23,7 +23,7 @@ export default function CartPage(){
           <p className="font-medium text-2xl">total</p>
           <p className="text-green-500">$totalprice</p>
         </div>
-        <button type="submit" form="cart" 
+        <button type="submit" form="cart" onClick={()=>localStorage.clear()}
         className="bg-green-400/20 my-6 w-48 h-16 self-center text-3xl font-medium rounded-full border-black border-4 hover:bg-green-400/70">
           Check Out
         </button>

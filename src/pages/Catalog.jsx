@@ -3,7 +3,7 @@ import ItemCard from "../components/ItemCard";
 import { getStoreItems } from "../storeapi";
 
 export async function loader(){
-  const storeItems = await getStoreItems(10);
+  const storeItems = await getStoreItems(20);
   return storeItems;
 }
 
