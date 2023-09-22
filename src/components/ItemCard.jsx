@@ -37,7 +37,7 @@ export default function ItemCard({itemProps}){
 
   //console.log(itemProps.title);
   return (
-    <div className="bg-black/80 h-80 w-64 m-6 flex justify-center items-center flex-col rounded-lg">
+    <div className="bg-black/80 h-80 w-64 m-6 flex justify-center items-center flex-col rounded-lg border-solid border-orange-300 border-2">
       <div className=" bg-white h-48 w-full flex justify-center ">
         <img src={itemProps.image} alt={itemProps.title}
           className="h-48"/>
@@ -52,7 +52,7 @@ export default function ItemCard({itemProps}){
             name="numOfItems" type="number" defaultValue={0} min="0" max="20">
           </input>
           <input type="hidden" name="itemid" value={itemProps.id}></input>
-          <button className=" bg-red-400 w-20">Add</button>
+          <button className=" bg-orange-300 w-20 hover:bg-[#8bc6ec]">Add</button>
         </Form>
       </div>
     </div>

@@ -35,12 +35,12 @@ export default function CartPage(){
 
   return(
     <>
-    <form id="cart" className="bg-white/30 h-5/6 w-[95%] self-center flex items-center flex-col  overflow-y-auto">
+    <form id="cart" className=" h-5/6 w-[95%] self-center flex items-center flex-col  overflow-y-auto">
       {cartItemsData.map((item)=>{
         return <CartItemCard key={item.id} itemData={item}/>
       })}
     </form>
-      <div className="bg-black/50 my-4 w-[80%] self-center flex items-center justify-around">
+      <div className="bg-black my-4 w-[80%] self-center flex items-center justify-around">
         <div className="text-white flex flex-col items-center">
           <p className="font-medium text-2xl">Subtotal</p>
           <p className="text-green-500">${roundedSubtotal}</p>
@@ -54,7 +54,7 @@ export default function CartPage(){
           <p className="text-green-500">${finalPrice}</p>
         </div>
         <button type="submit" form="cart" onClick={()=>localStorage.clear()}
-        className="bg-green-400/20 my-6 w-48 h-16 self-center text-3xl font-medium rounded-full border-black border-4 hover:bg-green-400/70">
+        className="bg-green-400/90 my-6 w-48 h-16 self-center text-3xl font-medium rounded-full border-black border-4 hover:bg-green-400/70">
           Check Out
         </button>
       </div>
