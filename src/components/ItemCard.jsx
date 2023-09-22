@@ -30,10 +30,7 @@ export async function action({request}){
   
   //formData.get("not real field") returns null
   //localStorage.getItem("misnalgas") returns null
-  //console.log(localStorage.getItem("misnalgas"));
-  //console.log(request.url);
   return redirect("/shop");
-  //return null;
 }
 
 export default function ItemCard({itemProps}){

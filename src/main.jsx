@@ -10,9 +10,8 @@ import Home from "./pages/Home.jsx"
 import Catalog from './pages/Catalog.jsx';
 import NavLayout from './components/NavLayout.jsx';
 
-import {
-  loader as catalogLoader,
-} from "./pages/Catalog.jsx";
+import {loader as catalogLoader} from "./pages/Catalog.jsx";
+import{loader as cartLoader} from "./pages/CartPage.jsx"
 
 import {action as addItemAction} from "./components/ItemCard.jsx"
 
@@ -37,7 +36,8 @@ const router = createBrowserRouter([
       },
       {
         path: "cart",
-        element: <CartPage/>
+        element: <CartPage/>,
+        loader: cartLoader
       }
 
     ]
