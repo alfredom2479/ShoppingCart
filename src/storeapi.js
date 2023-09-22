@@ -29,6 +29,7 @@ export async function getCartItem(itemInfo){
   const data = await res.json();
 
   data.totalPrice = data.price*itemInfo[1];
+  data.itemCount = itemInfo[1];
 
   return data;
 }

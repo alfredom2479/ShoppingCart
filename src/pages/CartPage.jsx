@@ -35,7 +35,7 @@ export default function CartPage(){
 
   return(
     <>
-    <form id="cart" className="bg-white/30 h-5/6 w-[95%] self-center flex items-center flex-col overflow-y-scroll">
+    <form id="cart" className="bg-white/30 h-5/6 w-[95%] self-center flex items-center flex-col  overflow-y-auto">
       {cartItemsData.map((item)=>{
         return <CartItemCard key={item.id} itemData={item}/>
       })}
