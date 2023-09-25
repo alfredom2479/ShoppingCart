@@ -14,6 +14,8 @@ export async function action({request}){
     numOfItems=0;
   }
 
+  if(numOfItems <1) return redirect("/shop");
+
   if(currCart && itemId){
       let currAmount = (Number(currCart[itemId]));
       if( typeof currAmount != "number") currAmount = 0;
