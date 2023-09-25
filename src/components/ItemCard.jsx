@@ -3,7 +3,13 @@ import {Form, redirect} from "react-router-dom";
 
 export async function action({request}){
 
-  let currCart = JSON.parse(localStorage.getItem("mycart"));
+
+  let currCart;
+  try{
+    currCart = JSON.parse(localStorage.getItem("mycart"));
+  }catch{
+    currCart = {}
+  }
   console.log(currCart);
 
   const formData = await request.formData();

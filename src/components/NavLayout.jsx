@@ -8,7 +8,12 @@ export default function NavLayout(){
 
   const [cartCount, setCartCount] = useState(0);
 
-  const cart = JSON.parse(localStorage.getItem("mycart"));
+  let cart;
+  try{
+    cart = JSON.parse(localStorage.getItem("mycart"));
+  }catch{
+    cart = {};
+  }
 
   useEffect(()=>{
     let cartItemCount = 0;

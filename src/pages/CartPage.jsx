@@ -3,6 +3,7 @@ import CartItemCard from "../components/CartItemCard";
 import { getCartItem } from "../storeapi";
 
 export async function loader(){
+  try{
   const cart  = JSON.parse(localStorage.getItem("mycart"));
   if (!cart) return [];
   const cartItems = Object.entries(cart);
@@ -18,6 +19,10 @@ export async function loader(){
   //console.log(cartItemsData);
   return cartItemsData
   
+  }catch(err){
+    localStorage.setItem("mycart", {})
+    return []
+  }
 }
 
 export default function CartPage(){
