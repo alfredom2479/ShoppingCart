@@ -4,9 +4,9 @@ import { getCartItem } from "../storeapi";
 
 export async function loader(){
   const cart  = JSON.parse(localStorage.getItem("mycart"));
+  if (!cart) return [];
   const cartItems = Object.entries(cart);
 
-  console.log(cartItems);
   if(!Array.isArray(cartItems)){
     return [];
   }
@@ -23,6 +23,7 @@ export async function loader(){
 export default function CartPage(){
 
   const cartItemsData = useLoaderData();
+  console.log(cartItemsData);
   const subtotal = cartItemsData.reduce((acc, item)=> acc + item.totalPrice, 0);
   const roundedSubtotal = Math.round(subtotal * 100) /100;
   roundedSubtotal.toFixed(2);
