@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { 
   Outlet,
   NavLink
@@ -7,6 +7,23 @@ import {
 export default function NavLayout(){
 
   const [cartCount, setCartCount] = useState(0);
+
+  const cart = JSON.parse(localStorage.getItem("mycart"));
+
+  useEffect(()=>{
+    let cartItemCount = 0;
+    if(!cart){
+      cartItemCount = 0;
+    }
+    else{
+      const itemsArr = Object.entries(cart);
+      for(let i = 0; i < itemsArr.length; i++){
+        cartItemCount += itemsArr[i][1];
+      }
+    }
+    setCartCount(cartItemCount);
+  },[cart])
+  
 
   const activeStyle = {
     color: "rgb(253,186,116)",
@@ -39,13 +56,13 @@ export default function NavLayout(){
                 Cart
               </NavLink>
             </li>
-            <li className=" bg-orange-300 flex rounded-full w-8 h-8 text-center justify-center items-center text-blue-500 font-bold">
+            <li className=" bg-blue-300 flex rounded-full w-8 h-8 text-center justify-center items-center text-white font-bold">
                 {cartCount}
             </li>
           </ul>
         </nav>
       </div>
-      <Outlet context={setCartCount} />
+      <Outlet />
     </div>
     
   )

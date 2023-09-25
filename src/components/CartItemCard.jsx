@@ -16,6 +16,7 @@ export default function CartItemCard({itemData}){
       {/* <input type="number" name="itemid" defaultValue={3} min="0" max="20"/>  */}
       <div className="text-white w-[15%] flex justify-center">
         {itemData.itemCount}
+        <button onClick={(e)=> e.preventDefault()}>edit</button>
       </div>
 
       <div className="text-white">
