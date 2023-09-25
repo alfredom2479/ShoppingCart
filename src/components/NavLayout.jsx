@@ -1,9 +1,12 @@
+import { useState } from "react"
 import { 
   Outlet,
   NavLink
 } from "react-router-dom"
 
 export default function NavLayout(){
+
+  const [cartCount, setCartCount] = useState(0);
 
   const activeStyle = {
     color: "rgb(253,186,116)",
@@ -36,10 +39,13 @@ export default function NavLayout(){
                 Cart
               </NavLink>
             </li>
+            <li className=" bg-orange-300 flex rounded-full w-8 h-8 text-center justify-center items-center text-blue-500 font-bold">
+                {cartCount}
+            </li>
           </ul>
         </nav>
       </div>
-      <Outlet />
+      <Outlet context={setCartCount} />
     </div>
     
   )
