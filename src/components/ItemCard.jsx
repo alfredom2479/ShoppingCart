@@ -47,7 +47,7 @@ export default function ItemCard({itemProps}){
   //const [itemCount, setItemCount] = useState(0);
   //console.log(itemProps.title);
   return (
-    <div className="bg-black/80 h-80 w-64 m-6 flex justify-center items-center flex-col rounded-lg border-solid border-orange-300 border-2">
+    <div className="bg-black/80 h-80 w-64 m-6 flex justify-center items-center flex-col rounded-lg border-solid border-blue-300 border-2 hover:border-orange-300">
       <div className=" bg-white h-48 w-full flex justify-center ">
         <img src={itemProps.image} alt={itemProps.title}
           className="h-48"/>
@@ -56,13 +56,13 @@ export default function ItemCard({itemProps}){
         {itemProps.title}
       </div>
       <div className="text-white">${itemProps.price}</div>
-      <div className="flex">
+      <div>
         <Form method="post" action="/shop">
           <input className="w-14 text-center mt-2" 
             name="numOfItems" type="number" defaultValue={0} min="0" max="20">
           </input>
           <input type="hidden" name="itemid" value={itemProps.id} ></input>
-          <button className=" bg-orange-300 w-20 hover:bg-[#8bc6ec]"
+          <button className=" bg-blue-300 w-20 hover:bg-orange-300"
             type="submit" >
             Add
           </button>
