@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { 
   Outlet,
   NavLink,
@@ -46,7 +46,8 @@ export default function NavLayout(){
     padding: "0 2rem"
   }
   const notActiveStye = {
-    padding: "0 2rem"
+    padding: "0 2rem",
+    color: "#8bc6ec",
   }
 
   return (
@@ -64,13 +65,13 @@ export default function NavLayout(){
                 Catalog
               </NavLink>
             </li>
-            <li className="mx-6 font-bold">
+            <li className="mx-6 font-bold relative">
               <NavLink to="/cart" style={({isActive}) => isActive? activeStyle : notActiveStye}>
                 Cart
               </NavLink>
-            </li>
-            <li className=" bg-blue-300 flex rounded-full w-8 h-8 text-center justify-center items-center text-white font-bold">
+              <div className=" bg-orange-300 flex rounded-full w-6 h-6 text-center justify-center items-center text-black font-semibold text-[.95rem] absolute -bottom-4 -right-2">
                 {cartCount}
+              </div>
             </li>
           </ul>
         </nav>

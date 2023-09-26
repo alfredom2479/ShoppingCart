@@ -42,13 +42,13 @@ export default function CartPage(){
   finalPrice.toFixed(2);
 
   return(
-    <>
-    <form id="cart" className=" h-5/6 w-[95%] self-center flex items-center flex-col  overflow-y-auto">
+    <div className="mt-2 h-5/6 w-[95%] self-center flex flex-col items-center justify-between">
+    <form id="cart" className=" self-center w-full flex items-center flex-col  overflow-y-auto">
       {cartItemsData.map((item)=>{
         return <CartItemCard key={item.id} itemData={item}/>
       })}
     </form>
-      <div className="bg-black my-4 w-[80%] self-center flex items-center justify-around">
+      <div className="bg-black mb-4 w-[80%] self-center flex items-center justify-around">
         <div className="text-white flex flex-col items-center">
           <p className="font-medium text-2xl">Subtotal</p>
           <p className="text-green-500">${roundedSubtotal}</p>
@@ -66,6 +66,6 @@ export default function CartPage(){
           Check Out
         </button>
       </div>
-      </>
+      </div>
   )
 }
