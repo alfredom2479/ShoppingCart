@@ -23,7 +23,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <NavLayout/>,
-    action: addItemAction,
     children:[
       {
         index:true,
@@ -33,6 +32,7 @@ const router = createBrowserRouter([
         path: "shop",
         element: <Catalog/>,
         loader: catalogLoader,
+        action: addItemAction
       },
       {
         path: "cart",

@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react"
 import { 
   Outlet,
-  NavLink
+  NavLink,
+  useActionData
 } from "react-router-dom"
 
 export default function NavLayout(){
 
   const [cartCount, setCartCount] = useState(0);
+  const addedItems = useActionData();
+
+  useEffect(()=>{
+    if(addedItems && addedItems.itemsAdded){
+      setCartCount(cartCount+addedItems)
+    }
+  },[addedItems,cartCount])
 
   let cart;
   try{
@@ -67,7 +75,7 @@ export default function NavLayout(){
           </ul>
         </nav>
       </div>
-      <Outlet />
+      <Outlet context={[cartCount, setCartCount]} />
     </div>
     
   )
