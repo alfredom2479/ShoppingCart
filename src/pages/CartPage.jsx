@@ -6,11 +6,14 @@ export async function loader(){
   try{
   const cart  = JSON.parse(localStorage.getItem("mycart"));
   if (!cart) return [];
-  const cartItems = Object.entries(cart);
+  let cartItems = Object.entries(cart);
 
   if(!Array.isArray(cartItems)){
     return [];
   }
+
+  console.log(cartItems);
+  cartItems = cartItems.filter((item)=> item[1] > 0 && item[1] < 21)
 
   const cartItemsData = await Promise.all(
     cartItems.map((item) => getCartItem(item))
@@ -28,7 +31,6 @@ export async function loader(){
 export default function CartPage(){
 
   const cartItemsData = useLoaderData();
-  console.log(cartItemsData);
   const subtotal = cartItemsData.reduce((acc, item)=> acc + item.totalPrice, 0);
   const roundedSubtotal = Math.round(subtotal * 100) /100;
   roundedSubtotal.toFixed(2);
