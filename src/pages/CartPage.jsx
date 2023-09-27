@@ -48,7 +48,7 @@ export default function CartPage(){
         return <CartItemCard key={item.id} itemData={item}/>
       })}
     </form>
-      <div className="bg-black mb-4 w-[80%] self-center flex items-center justify-around">
+      <div className="bg-black mb-4 w-[90%] self-center flex items-center justify-around ">
         <div className="text-white flex flex-col items-center">
           <p className="font-medium text-2xl">Subtotal</p>
           <p className="text-green-500">${roundedSubtotal}</p>
